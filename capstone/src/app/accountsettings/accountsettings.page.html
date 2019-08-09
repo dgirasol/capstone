@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>accountsettings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-button routerLink="/accounts" routerDirection="root">Librarian Accounts</ion-button>
+<ion-button (click)="gotoItems()">
+    <ion-icon slot ="start" name="book"></ion-icon><ion-label>Item Records</ion-label>
+  </ion-button>
+</ion-content>
+

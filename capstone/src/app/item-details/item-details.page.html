@@ -1,0 +1,60 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Item Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content padding>
+  
+  <ion-list lines="full">
+
+      <script>
+         
+        </script>
+  
+      <ion-item>
+          <iframe id="vs_iframe" src="https://www.viewstl.com/?embedded&url=https://storage.googleapis.com/ethnofind.appspot.com/3dmodels/creepydoll.stl" style="border:1;margin:0;width:250px;height:250px;"></iframe>  
+          <ion-img [src]="item.photo" style="border:0;margin:0;width:300px;height:300px;" onclick="uplad()" ></ion-img>
+        </ion-item>
+  
+        <ion-item>
+            <ion-input type ="file" (change)="selectedModel($event)"></ion-input>
+            <ion-input id = "upload" type ="file" (change)="selectedPhoto($event)"></ion-input>
+          </ion-item>
+
+    <ion-item>
+        <ion-input required type="text" placeholder="name" [(ngModel)]="item.name"></ion-input>
+      </ion-item>
+      
+    <ion-item>
+      <ion-input required type="text" placeholder="name" [(ngModel)]="item.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="type" [(ngModel)]="item.type"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="stl" [(ngModel)]="item.stl"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="photo" [(ngModel)]="item.photo"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-card *ngIf="createdCode">
+        <ngx-qrcode [(qrc-value)] ="createdCode"></ngx-qrcode>
+      </ion-card>
+    </ion-item>
+    <ion-button (click)="speak()">
+      SPEAK
+    </ion-button>
+  </ion-list>
+  <ion-button expand="full" (click)="saveItem()">Save</ion-button>
+
+ 
+
+</ion-content>
+
